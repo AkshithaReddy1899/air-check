@@ -1,9 +1,19 @@
 const List = (props) => {
   const list = props;
   return (
-    <li>
+    <li key={list.item.id}>
       <h2>{list.item.city}</h2>
-      <p>
+      <h3>
+        AQI:&nbsp;
+        {list.item.aqi}
+      </h3>
+    </li>
+  );
+};
+
+export default List;
+
+/* <p>
         <b>Carbon monoxide</b>
         :
         {list.item.co}
@@ -52,9 +62,4 @@ const List = (props) => {
         <b>Sulfur dioxide</b>
         :
         {list.item.so2}
-      </p>
-    </li>
-  );
-};
-
-export default List;
+      </p> */
