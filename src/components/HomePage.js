@@ -4,6 +4,10 @@ import { fetchDataFromApi, searchDataFromApi } from '../redux/air';
 import List from './List';
 
 const HomePage = () => {
+  const routeChange = () => {
+    window.location.reload();
+  };
+
   const dispatch = useDispatch();
   const data = useSelector((state) => state.air);
   useEffect(() => {
@@ -17,11 +21,17 @@ const HomePage = () => {
     e.preventDefault();
     dispatch(searchDataFromApi(textInput.current.value));
     textInput.current.value = '';
+    {
+      const back = document.getElementById('back');
+      back.classList.add('back-active');
+      back.classList.remove('back');
+    }
   };
 
   return (
     <div>
       <h1>Air checks</h1>
+      <button type="button" id="back" className="back" onClick={routeChange}>back</button>
       <div className="search">
         <form>
           <input ref={textInput} type="text" placeholder="city" />
