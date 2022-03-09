@@ -44,6 +44,9 @@ export const searchDataFromApi = (cityname) => (dispatch) => {
     method: 'GET',
   })
     .then((res) => res.json())
+    .catch((error) => {
+      console.log(error);
+    })
     .then((data) => {
       obj.push(data[0].lat);
       obj.push(data[0].lon);
