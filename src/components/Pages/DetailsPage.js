@@ -1,8 +1,13 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
 const DetailsPage = () => {
+  const data = useSelector((state) => state.air);
+  console.log(data);
+
   const location = useLocation();
+  console.log(location);
   return (
     <div>
       <h2>{location.state.item.city}</h2>

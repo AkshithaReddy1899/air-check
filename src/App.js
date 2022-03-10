@@ -1,8 +1,8 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './styles/App.css';
-import DetailsPage from './components/DetailsPage';
-import HomePage from './components/HomePage';
+import HomePage from './components/Pages/HomePage';
+import DetailsPage from './components/Pages/DetailsPage';
 
 const App = () => (
   <Routes>
