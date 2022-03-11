@@ -10,7 +10,6 @@ export const getData = (arr) => ({
 });
 
 export const getDetailsFromAPI = (param) => async (dispatch) => {
-  console.log(param);
   await fetch(`https://restcountries.com/v3.1/name/${param}`, {
     method: 'GET',
   })
@@ -34,6 +33,7 @@ export const getDetailsFromAPI = (param) => async (dispatch) => {
         item.continent = value.continent;
         item.region = value.region;
         item.subregion = value.subregion;
+        console.log(item);
         dispatch(getData(item));
       });
     });

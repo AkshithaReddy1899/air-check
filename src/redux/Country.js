@@ -12,7 +12,7 @@ export const fetchCountryFromApi = () => (dispatch) => {
   fetch('https://www.universal-tutorial.com/api/countries/', {
     method: 'GET',
     headers: {
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJfZW1haWwiOiJha3NoaXRoYXJlZGR5MTg5OUBnbWFpbC5jb20iLCJhcGlfdG9rZW4iOiJGekJxX2YzWldIekRtcDV5UmdjWTJSTmpfOG5nUFhQc2RtYXdNdFk0M0dVYU1qbjYwczRMRkF6RW9aSUo0cFVBR2J3In0sImV4cCI6MTY0Njk5MTI0Nn0.Ad_BNCQ6XA2wv9Lkc22JhgtNmoBzseniNvJ2IPjlrm4',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJfZW1haWwiOiJwcmFuZWV0aGFyZWRkeTEyOThAZ21haWwuY29tIiwiYXBpX3Rva2VuIjoiMndNUHZ0VWhLMkM1UGtVZURHWXhBMl95a3ViUkRWMnR6bzVKU1k4UXF3elZOMDh4YVIxRHVMelpGVlVRLTFQREUyNCJ9LCJleHAiOjE2NDcwODYwNzl9.h-eFVVClRfKsFf3h13LKxkZsJ_qLOUtwTdIoYTVYX-g',
       Accept: 'application/json',
     },
   })
@@ -22,7 +22,6 @@ export const fetchCountryFromApi = () => (dispatch) => {
       errorText.textContent = error;
     })
     .then((data) => {
-      console.log(data);
       Object.entries(data).forEach(([key, value]) => {
         const obj = {};
         obj.id = key;
