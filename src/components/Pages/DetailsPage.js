@@ -9,17 +9,16 @@ const DetailsPage = () => {
   const dispatch = useDispatch();
 
   const data = useSelector((state) => state.details);
+  const item = data.slice(-1);
   useEffect(() => {
-    if (!data.length) {
-      dispatch(getDetailsFromAPI(state));
-    }
+    dispatch(getDetailsFromAPI(state));
   }, []);
 
   return (
     <>
       <div className="details">
         {
-          data.map((obj) => (
+          item.map((obj) => (
             <li key={obj.id}>
               <div className="details-main">
                 <h3>{(obj.name) ? obj.name : 'Not available'}</h3>

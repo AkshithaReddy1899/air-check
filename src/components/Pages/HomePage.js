@@ -10,12 +10,12 @@ const HomePage = () => {
   const data = useSelector((state) => state.countries);
 
   const [searchField, setSearchField] = useState('');
-  const countriesToShow = [];
+  const countrieShow = [];
 
   data.map((item) => (
-    item.map((obj) => (
-      countriesToShow.push(obj)
-    ))
+    item.forEach((obj) => {
+      countrieShow.push(obj);
+    })
   ));
 
   useEffect(() => {
@@ -28,7 +28,7 @@ const HomePage = () => {
     setSearchField((e.target.value).toLowerCase());
   };
 
-  const filteredCountries = countriesToShow.filter((country) => country.name.includes(searchField));
+  const filteredCountries = countrieShow.filter((country) => country.id.includes(searchField));
 
   return (
     <div>
@@ -48,7 +48,6 @@ const HomePage = () => {
                   <i className="icon fas fa-solid fa-globe" />
                   <div>
                     <h4>{obj.name}</h4>
-                    <p>{obj.c_code}</p>
                     <p>{obj.code}</p>
                   </div>
                 </div>

@@ -1,3 +1,5 @@
+import { date } from '../api/variables';
+
 const FETCH_DATA = 'Countries/FETCH_DATA';
 
 const initialState = [];
@@ -6,15 +8,23 @@ export const fetchData = (payload) => ({
   type: FETCH_DATA,
   payload,
 });
-
+/*
+export const fetchCountryFromApi = () => () => {
+  fetch(`https://api.covid19tracking.narrativa.com/api/${date()}`, {
+    method: 'GET',
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      const list = data.dates[date()].countries;
+      const obj = Object.entries(list);
+      console.log(obj);
+    });
+};
+*/
 export const fetchCountryFromApi = () => (dispatch) => {
   const arr = [];
-  fetch('https://www.universal-tutorial.com/api/countries/', {
+  fetch(`https://api.covid19tracking.narrativa.com/api/${date()}`, {
     method: 'GET',
-    headers: {
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJfZW1haWwiOiJwcmFuZWV0aGFyZWRkeTEyOThAZ21haWwuY29tIiwiYXBpX3Rva2VuIjoiMndNUHZ0VWhLMkM1UGtVZURHWXhBMl95a3ViUkRWMnR6bzVKU1k4UXF3elZOMDh4YVIxRHVMelpGVlVRLTFQREUyNCJ9LCJleHAiOjE2NDcwODYwNzl9.h-eFVVClRfKsFf3h13LKxkZsJ_qLOUtwTdIoYTVYX-g',
-      Accept: 'application/json',
-    },
   })
     .then((res) => res.json())
     .catch((error) => {
@@ -22,13 +32,15 @@ export const fetchCountryFromApi = () => (dispatch) => {
       errorText.textContent = error;
     })
     .then((data) => {
-      Object.entries(data).forEach(([key, value]) => {
-        const obj = {};
-        obj.id = key;
-        obj.name = value.country_name;
-        obj.c_code = value.country_phone_code;
-        obj.code = value.country_short_name;
-        arr.push(obj);
+      const list = data.dates[date()].countries;
+      const obj = Object.entries(list);
+      obj.forEach((ele) => {
+        const newObj = {};
+        const [name, obj] = ele;
+        newObj.name = name;
+        newObj.id = obj.id;
+        newObj.code = obj.today_new_confirmed;
+        arr.push(newObj);
       });
       dispatch(fetchData(arr));
     });

@@ -1,5 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`HomePage Homepage matched snapshot 1`] = `<details />`;
-
-exports[`details redux details matched snapshot 1`] = `<details />`;
