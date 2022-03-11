@@ -5,45 +5,20 @@ exports[`HomePage Homepage matched snapshot 1`] = `
   <h1>
     Air check
   </h1>
+  <small
+    id="error"
+  >
+     
+  </small>
   <button
     className="back"
     id="back"
-    onClick={[Function]}
     type="button"
   >
     back
   </button>
-  <div
-    className="search"
-  >
-    <form>
-      <input
-        placeholder="city"
-        type="text"
-      />
-      <button
-        onClick={[Function]}
-        type="submit"
-      >
-        search
-      </button>
-    </form>
-  </div>
-  <ul>
-    <li>
-      <div>
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          details
-        </button>
-      </div>
-      <h2 />
-      <h3>
-        AQI: 
-      </h3>
-    </li>
-  </ul>
+  <ul
+    id="list"
+  />
 </div>
 `;

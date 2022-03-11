@@ -7,7 +7,7 @@ import DetailsPage from './components/Pages/DetailsPage';
 const App = () => (
   <Routes>
     <Route path="/" element={<HomePage />} />
-    <Route path="/details" element={<DetailsPage />} />
+    <Route path="/:state" element={<DetailsPage />} />
   </Routes>
 );
 

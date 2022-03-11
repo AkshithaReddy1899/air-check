@@ -1,71 +1,87 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { useLocation } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import { getDetailsFromAPI } from '../../redux/details';
 
 const DetailsPage = () => {
-  const data = useSelector((state) => state.air);
-  console.log(data);
+  const { state } = useParams();
+  const dispatch = useDispatch();
 
-  const location = useLocation();
-  console.log(location);
+  const data = useSelector((state) => state.details);
+  console.log(data);
+  useEffect(() => {
+    if (!data.length) {
+      dispatch(getDetailsFromAPI(state));
+    }
+  }, []);
+
   return (
-    <div>
-      <h2>{location.state.item.city}</h2>
-      <p>
-        AQI:&nbsp;
-        {location.state.item.aqi}
-      </p>
-      <p>
-        <b>Carbon monoxide</b>
-        :
-        {location.state.item.co}
-      </p>
-      <p>
-        <b>Ammonia</b>
-        :
-        {location.state.item.nh3}
-      </p>
-      <p>
-        <b>Nitric oxide</b>
-        :
-        {location.state.item.no}
-      </p>
-      <p>
-        <b>Nitrogen dioxide</b>
-        :
-        {location.state.item.no2}
-      </p>
-      <p>
-        <b>Ozone</b>
-        :
-        {location.state.item.o3}
-      </p>
-      <p>
-        <b>
-          Fine particle
-          <small>
-            PM 2.5
-          </small>
-        </b>
-        :
-        {location.state.item.pm2_5}
-      </p>
-      <p>
-        <b>
-          Fine particle
-          <small>
-            PM10
-          </small>
-        </b>
-        :
-        {location.state.item.pm10}
-      </p>
-      <p>
-        <b>Sulfur dioxide</b>
-        :
-        {location.state.item.so2}
-      </p>
-    </div>
+    <>
+      <ul>
+        {
+          data.map((obj) => console.log(obj))
+        }
+        {
+          data.map((obj) => (
+            <li key={obj.id}>
+              <h3>{(obj.name) ? obj.name : 'Not available'}</h3>
+              <img src={obj.flag} alt="flag" />
+              <p>
+                <b>Official name</b>
+                :&nbsp;
+                {
+                  (obj.official) ? obj.official : 'Not available'
+                }
+              </p>
+              <p>
+                <b>continent</b>
+                :&nbsp;
+                {
+                  (obj.continent) ? obj.continent : 'Not available'
+                }
+              </p>
+              <p>
+                <b>Capital</b>
+                :&nbsp;
+                {
+                  (obj.cap) ? obj.cap : 'Not available'
+                }
+              </p>
+              <p>
+                <b>Region</b>
+                :&nbsp;
+                {
+                  (obj.region) ? obj.region : 'Not available'
+                }
+              </p>
+              <p>
+                <b>Sub Region</b>
+                :&nbsp;
+                {
+                  (obj.subregion) ? obj.subregion : 'Not available'
+                }
+              </p>
+              <p>
+                <b>Population</b>
+                :&nbsp;
+                {
+                  (obj.pop) ? obj.pop : 'Not available'
+                }
+              </p>
+              <p>
+                <b>Area</b>
+                :&nbsp;
+                {
+                  (obj.area) ? obj.area : 'Not available'
+                }
+                Km
+                <sup>2</sup>
+              </p>
+            </li>
+          ))
+        }
+      </ul>
+    </>
   );
 };
 

@@ -1,12 +1,21 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { v4 as uuidv4 } from 'uuid';
+import { Link } from 'react-router-dom';
 import { fetchCountryFromApi } from '../../redux/Country';
-import List from '../List';
 
 const HomePage = () => {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.countries);
+  console.log(data);
+
+  const countriesToShow = [];
+
+  data.map((item) => (
+    item.map((obj) => (
+      countriesToShow.push(obj)
+    ))
+  ));
+
   useEffect(() => {
     if (!data.length) {
       dispatch(fetchCountryFromApi());
@@ -18,21 +27,17 @@ const HomePage = () => {
       <h1>Air check</h1>
       <small id="error">&nbsp;</small>
       <button type="button" id="back" className="back">back</button>
-      <div className="search">
-        <form>
-          <input type="text" placeholder="city" />
-          <button type="submit">search</button>
-        </form>
-      </div>
-      <ul>
+      <ul id="list">
         {
-          data.map((item) => (
-            item.map((obj) => (
-              <List key={uuidv4()} item={obj} />
-            ))
+          countriesToShow.map((obj) => (
+            <Link to={{ pathname: `/${obj.name}`, state: 'obj.name' }} key={obj.id}>
+              <button type="button">details</button>
+              <h4>{obj.name}</h4>
+              <p>{obj.c_code}</p>
+              <p>{obj.code}</p>
+            </Link>
           ))
         }
-        fghjk
       </ul>
     </div>
   );

@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomePage Homepage matched snapshot 1`] = `<ul />`;
