@@ -2,9 +2,38 @@
 
 exports[`HomePage Homepage matched snapshot 1`] = `
 <div>
-  <h1>
-    Air check
-  </h1>
+  <nav
+    className="main-nav"
+  >
+    <div>
+      <i
+        className="fas fa-chevron-left"
+      />
+      2022
+    </div>
+    <div>
+      Countries Details
+    </div>
+    <div>
+      <i
+        className="fas fa-microphone"
+      />
+         
+      <i
+        className="fas fa-cog"
+      />
+    </div>
+  </nav>
+  <div
+    className="search"
+  >
+    <input
+      className="input"
+      onChange={[Function]}
+      placeholder="country"
+      type="text"
+    />
+  </div>
   <small
     id="error"
   >

@@ -1,8 +1,8 @@
 module.exports = {
   roots: [
-    './src/'
+    './src/',
   ],
   setupFilesAfterEnv: [
-    require.resolve('./tests.setup.js')
-  ]
+    require.resolve('./tests.setup.js'),
+  ],
 };

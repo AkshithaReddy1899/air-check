@@ -1,11 +1,11 @@
-import React from "react";
-import { matches } from "./test-utils";
-import { Provider } from "react-redux";
-import store from "../redux/configStore";
-import DetailsPage from "../components/Pages/DetailsPage";
+import React from 'react';
+import { Provider } from 'react-redux';
+import matches from './test-utils';
+import store from '../redux/configStore';
+import DetailsPage from '../components/Pages/DetailsPage';
 
-describe("HomePage", () => {
-  it('Homepage matched snapshot', () => {
-   matches(<Provider store={store}><DetailsPage /></Provider>)
+describe('Details page', () => {
+  it('DeailsPage matched snapshot', () => {
+    matches(<Provider store={store}><DetailsPage /></Provider>);
   });
 });

@@ -1,5 +1,7 @@
 import renderer from 'react-test-renderer';
 
-export const matches = children => expect(
-  renderer.create(children).toJSON()
+const matches = (children) => expect(
+  renderer.create(children).toJSON(),
 ).toMatchSnapshot();
+
+export default matches;

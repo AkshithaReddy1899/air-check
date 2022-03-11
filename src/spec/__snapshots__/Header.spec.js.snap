@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Header matched snapshot 1`] = `
+<nav
+  className="main-nav"
+>
+  <div>
+    <i
+      className="fas fa-chevron-left"
+    />
+    2022
+  </div>
+  <div>
+    Countries Details
+  </div>
+  <div>
+    <i
+      className="fas fa-microphone"
+    />
+       
+    <i
+      className="fas fa-cog"
+    />
+  </div>
+</nav>
+`;
+
+exports[`HomePage Homepage matched snapshot 1`] = `
+<nav
+  className="main-nav"
+>
+  <div>
+    <i
+      className="fas fa-chevron-left"
+    />
+    2022
+  </div>
+  <div>
+    Countries Details
+  </div>
+  <div>
+    <i
+      className="fas fa-microphone"
+    />
+       
+    <i
+      className="fas fa-cog"
+    />
+  </div>
+</nav>
+`;
