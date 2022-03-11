@@ -8,19 +8,7 @@ export const fetchData = (payload) => ({
   type: FETCH_DATA,
   payload,
 });
-/*
-export const fetchCountryFromApi = () => () => {
-  fetch(`https://api.covid19tracking.narrativa.com/api/${date()}`, {
-    method: 'GET',
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      const list = data.dates[date()].countries;
-      const obj = Object.entries(list);
-      console.log(obj);
-    });
-};
-*/
+
 export const fetchCountryFromApi = () => (dispatch) => {
   const arr = [];
   fetch(`https://api.covid19tracking.narrativa.com/api/${date()}`, {
