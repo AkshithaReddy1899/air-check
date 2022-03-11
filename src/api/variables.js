@@ -8,6 +8,4 @@ const date = () => {
   return `${year}-${month}-${day}`;
 };
 
-export {
-  date,
-};
+export default date;

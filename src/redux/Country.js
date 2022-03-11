@@ -1,4 +1,4 @@
-import { date } from '../api/variables';
+import date from '../api/variables';
 
 const FETCH_DATA = 'Countries/FETCH_DATA';
 
