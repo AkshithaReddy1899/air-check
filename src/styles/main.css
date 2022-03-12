@@ -1,0 +1,90 @@
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(44, 44, 212);
+  padding: 10px 5px;
+}
+
+.fas {
+  font-size: 1rem;
+}
+
+.input {
+  margin: 16px;
+  padding: 3px;
+  float: right;
+  background: rgb(240, 238, 234);
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+#list {
+  width: 100vw;
+  margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#list li {
+  width: 49vw;
+  min-height: 150px;
+  border: 2px solid rgb(71, 71, 212);
+  color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+#list li i {
+  float: right;
+}
+
+.content {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.content div {
+  width: 60%;
+  height: 130px;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 10px;
+}
+
+#list li p {
+  font-size: 0.7rem;
+}
+
+.list-item {
+  background: rgb(54, 54, 202);
+}
+
+.alternate {
+  background: rgb(84, 84, 214);
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  font-size: 4rem;
+  margin-bottom: 60px;
+}
+
+.list-item .icon {
+  color: rgb(98, 98, 199);
+}
+
+.alternate .icon {
+  color: rgb(66, 66, 199);
+}
