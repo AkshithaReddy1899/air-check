@@ -12,7 +12,7 @@ describe('Details page', () => {
         <MemoryRouter>
           <DetailsPage />
         </MemoryRouter>
-      </Provider>
-      );
+      </Provider>,
+    );
   });
 });
