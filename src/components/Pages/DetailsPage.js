@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getDetailsFromAPI } from '../../redux/details';
 import '../../styles/details.css';
+import Back from './Back';
 
 const DetailsPage = () => {
   const { state } = useParams();
@@ -17,6 +18,7 @@ const DetailsPage = () => {
   return (
     <>
       <div className="details">
+        <Back />
         {
           item.map((obj) => (
             <li key={obj.id}>
