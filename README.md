@@ -18,6 +18,10 @@ A single page react readux project that displays list of countries and their det
 - Redux
 - API
 
+## Credits
+
+Original design idea by [Nelson sakwa on Behance](https://www.behance.net/sakwadesignstudio)
+
 ## Getting started
 
 1. Clone the project `git clone https://github.com/AkshithaReddy1899/air-check`
