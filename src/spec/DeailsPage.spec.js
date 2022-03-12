@@ -8,10 +8,11 @@ import DetailsPage from '../components/Pages/DetailsPage';
 describe('Details page', () => {
   it('DeailsPage matched snapshot', () => {
     matches(
-    <Provider store={store}>
-      <MemoryRouter>
-        <DetailsPage />
-      </MemoryRouter>
-    </Provider>);
+      <Provider store={store}>
+        <MemoryRouter>
+          <DetailsPage />
+        </MemoryRouter>
+      </Provider>
+      );
   });
 });
