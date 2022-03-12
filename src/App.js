@@ -1,17 +1,14 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import './App.css';
-import DetailsPage from './components/DetailsPage';
-import HomePage from './components/HomePage';
+import './styles/App.css';
+import HomePage from './components/Pages/HomePage';
+import DetailsPage from './components/Pages/DetailsPage';
 
-const App = () => {
-  console.log('OM');
-  return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/details" element={<DetailsPage />} />
-    </Routes>
-  );
-};
+const App = () => (
+  <Routes>
+    <Route path="/" element={<HomePage />} />
+    <Route path="/:state" element={<DetailsPage />} />
+  </Routes>
+);
 
 export default App;

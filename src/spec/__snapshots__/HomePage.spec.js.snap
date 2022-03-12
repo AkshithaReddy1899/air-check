@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomePage Homepage matched snapshot 1`] = `
+<div>
+  <nav
+    className="main-nav"
+  >
+    <div>
+      <i
+        className="fas fa-chevron-left"
+      />
+      2022
+    </div>
+    <div>
+      Countries Details
+    </div>
+    <div>
+      <i
+        className="fas fa-microphone"
+      />
+         
+      <i
+        className="fas fa-cog"
+      />
+    </div>
+  </nav>
+  <div
+    className="search"
+  >
+    <input
+      className="input"
+      onChange={[Function]}
+      placeholder="country"
+      type="text"
+    />
+  </div>
+  <small
+    id="error"
+  >
+     
+  </small>
+  <button
+    className="back"
+    id="back"
+    type="button"
+  >
+    back
+  </button>
+  <ul
+    id="list"
+  />
+</div>
+`;

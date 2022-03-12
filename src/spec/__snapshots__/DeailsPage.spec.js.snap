@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Details page DeailsPage matched snapshot 1`] = `
+<div
+  className="details"
+/>
+`;
+
+exports[`HomePage Homepage matched snapshot 1`] = `<ul />`;
