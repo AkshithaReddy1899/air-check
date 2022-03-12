@@ -4,8 +4,13 @@
 
 A single page react readux project that displays list of countries and their details
 
+## Live 
+
+[Demo](https://react-capsto-developmen-a3gqsv.herokuapp.com/)
+
 ## screenshot
 
+![React-App](https://user-images.githubusercontent.com/70577783/158001779-01a382e8-62af-4ff0-a618-0cbfc30663dd.png)
 
 ## Built With
 
